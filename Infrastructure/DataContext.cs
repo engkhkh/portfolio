@@ -8,9 +8,11 @@ namespace Infrastructure
 {
    public class DataContext:DbContext
     {
+       
+
         public DataContext(DbContextOptions<DataContext> options):base(options)
         {
-
+            
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -21,7 +23,7 @@ namespace Infrastructure
                 
                 new Owner()
                 {
-                    Id=Guid.NewGuid(),Avatar="AVATR1.JPEG",FullName="ITECH-CONSULTANTS",Profil="IT/CLOULD/MOBILE/ERP Systems"
+                    Id=Guid.NewGuid(),Avatar="AVATR1.JPEG",FullName="ITECH-CONSULTANTS",Profil= "Software Program/Maintenance And Network Surveillance Cameras/Mobile Applications/Cloud Management"
                 }
                 
                 
@@ -30,5 +32,9 @@ namespace Infrastructure
         }
         public DbSet<Owner> Owner { get; set; }
         public DbSet<portfolioitem> portfolioitems { get; set; }
+
+        /*
+         dotnet ef database update -s C:\Users\Administrator\Source\Repos\portfolio\Web\Web.csproj
+         */
     }
 }

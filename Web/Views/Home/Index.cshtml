@@ -12,9 +12,8 @@
 <header class="masthead bg-primary text-white text-center">
 	<div class="container d-flex align-items-center flex-column">
 
-		<!-- Masthead Avatar Image -->
-		<img class="masthead-avatar mb-5" src="~/img/@Model.Owner.Avatar" style="border-radius:50%" alt="">
-
+		<!-- Masthead Avatar Image
+	<img class="masthead-avatar mb-5" src="~/img/@Model.Owner.Avatar" style="border-radius:50%" alt=""> -->
 		<!-- Masthead Heading -->
 		<h1 class="masthead-heading text-uppercase mb-0">@Model.Owner.FullName</h1>
 
@@ -38,7 +37,7 @@
 	<div class="container">
 
 		<!-- Portfolio Section Heading -->
-		<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+		<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Products</h2>
 
 		<!-- Icon Divider -->
 		<div class="divider-custom">
@@ -63,7 +62,8 @@
 								<i class="fas fa-plus fa-3x"></i>
 							</div>
 						</div>
-						<img class="img-fluid" src="~/img/portfolio/@portfolioitem.ImageUrl" alt="">
+					
+						<img class="img-fluid" src="~/img/portfolio/@portfolioitem.ImageUrl" alt="@portfolioitem.ProjectName">
 					</div>
 				</div>
 
@@ -80,7 +80,7 @@
 	<div class="container">
 
 		<!-- About Section Heading -->
-		<h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+		<h2 class="page-section-heading text-center text-uppercase text-white">About us</h2>
 
 		<!-- Icon Divider -->
 		<div class="divider-custom divider-light">
@@ -94,20 +94,27 @@
 		<!-- About Section Content -->
 		<div class="row">
 			<div class="col-lg-4 ml-auto">
-				<p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p>
+				<p class="lead">
+					ITECH Company for computer programs and networks honor to provide services and software solutions to government sectors and enterprises, institutions and services substantive and technical support as we provide our customers with financial systems and systems of human resources management in addition to many of the systems and programs.
+
+
+				</p>
 			</div>
 			<div class="col-lg-4 mr-auto">
-				<p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p>
+				<p class="lead">We are in an institution any tack aspire to expand our customer base within the Kingdom of Saudi Arabia of what we offer our financial and administrative programs reliable results and after-sales service worthy of our expertise in this area and what we offer our services and improvements in the financial and administrative results for our clients. As we aspire to be a leader in the field of computer and software solutions and information technology companies what has been achieved so far across the Arab world.</p>
+			</div>
+			<div class="col-lg-4 mr-auto">
+				<p class="lead">Our programs and software solutions variety of different activities of the financial and administrative systems and Systems stores and warehouses include and provide inventory and programs hardware, software and human resources management software to automate the administrative work in enterprises, companies, institutions and government agencies, we also provide our services to companies software by providing protection of software and encrypt and protect code solutions her source.</p>
 			</div>
 		</div>
 
-		<!-- About Section Button -->
-		<div class="text-center mt-4">
-			<a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/themes/freelancer/">
-				<i class="fas fa-download mr-2"></i>
-				Free Download!
-			</a>
-		</div>
+		<!-- About Section Button
+	<div class="text-center mt-4">
+		<a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/themes/freelancer/">
+			<i class="fas fa-download mr-2"></i>
+			Free Download!
+		</a>
+	</div>-->
 
 	</div>
 </section>
@@ -117,7 +124,7 @@
 	<div class="container">
 
 		<!-- Contact Section Heading -->
-		<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+		<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">get quotation</h2>
 
 		<!-- Icon Divider -->
 		<div class="divider-custom">
@@ -136,7 +143,7 @@
 					<div class="control-group">
 						<div class="form-group floating-label-form-group controls mb-0 pb-2">
 							<label>Name</label>
-							<input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
+							<input class="form-control" id="name" type="text" placeholder="YourCompany Name" required="required" data-validation-required-message="Please enter your yourcompany name.">
 							<p class="help-block text-danger"></p>
 						</div>
 					</div>
@@ -157,7 +164,7 @@
 					<div class="control-group">
 						<div class="form-group floating-label-form-group controls mb-0 pb-2">
 							<label>Message</label>
-							<textarea class="form-control" id="message" rows="5" placeholder="Message" required="required" data-validation-required-message="Please enter a message."></textarea>
+							<textarea class="form-control" id="message" rows="5" placeholder="Type the name of the product or service, indicating how many employees your company has" required="required" data-validation-required-message="Please enter a message."></textarea>
 							<p class="help-block text-danger"></p>
 						</div>
 					</div>
@@ -200,6 +207,11 @@
 								</div>
 								<!-- Portfolio Modal - Image -->
 								<img class="img-fluid rounded mb-5" src="~/img/portfolio/@item.ImageUrl" alt="">
+								<video class="img-fluid rounded mb-5" controls>
+									<source src="~/img/portfolio/@item.vedioUrl" type="video/mp4">
+									
+									Your browser does not support the video tag.
+								</video>
 								<!-- Portfolio Modal - Text -->
 								<p class="mb-5">@item.Description</p>
 								<button class="btn btn-primary" href="#" data-dismiss="modal">

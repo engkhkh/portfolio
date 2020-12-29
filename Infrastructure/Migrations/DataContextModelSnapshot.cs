@@ -86,6 +86,8 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
+                    b.Property<string>("vedioUrl")
+                       .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProjectName")
                         .HasColumnType("nvarchar(max)");
