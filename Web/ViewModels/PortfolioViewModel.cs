@@ -12,7 +12,10 @@ namespace Web.ViewModels
         public string ProjectName { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
+        public string vedioUrl { get; set; }
         public IFormFile File { get; set; }
+        public IFormFile vFile { get; set; }
+
 
 
     }

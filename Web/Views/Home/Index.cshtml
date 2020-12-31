@@ -6,14 +6,32 @@
 @{
 	ViewData["title"] = "index";
 }
-
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script type="text/javascript">
+	function sendMail() {
+		Email.send({
+            Host: "us2.smtp.mailhostbox.com",
+			Port:"25",
+			Username: "hr@enghous.com",
+			Password: "HR123456789",
+			To: 'khilel208@gmail.com',
+			From: "hr@enghous.com",
+			Subject: "Get Quotations",
+			Body: "contact!!" +document.getElementById("name").value+"/"+document.getElementById("email").value + "/" + document.getElementById("phone").value + "/" + document.getElementById("message").value
+			
+		})
+			.then(function (message) {
+				alert("Mail has been sent successfully")
+			});
+	}
+</script>
 
 <!-- Masthead -->
 <header class="masthead bg-primary text-white text-center">
 	<div class="container d-flex align-items-center flex-column">
 
 		<!-- Masthead Avatar Image
-	<img class="masthead-avatar mb-5" src="~/img/@Model.Owner.Avatar" style="border-radius:50%" alt=""> -->
+		<img class="masthead-avatar mb-5" src="~/img/@Model.Owner.Avatar" style="border-radius:50%" alt=""> -->
 		<!-- Masthead Heading -->
 		<h1 class="masthead-heading text-uppercase mb-0">@Model.Owner.FullName</h1>
 
@@ -62,7 +80,7 @@
 								<i class="fas fa-plus fa-3x"></i>
 							</div>
 						</div>
-					
+
 						<img class="img-fluid" src="~/img/portfolio/@portfolioitem.ImageUrl" alt="@portfolioitem.ProjectName">
 					</div>
 				</div>
@@ -109,12 +127,12 @@
 		</div>
 
 		<!-- About Section Button
-	<div class="text-center mt-4">
-		<a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/themes/freelancer/">
-			<i class="fas fa-download mr-2"></i>
-			Free Download!
-		</a>
-	</div>-->
+		<div class="text-center mt-4">
+			<a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/themes/freelancer/">
+				<i class="fas fa-download mr-2"></i>
+				Free Download!
+			</a>
+		</div>-->
 
 	</div>
 </section>
@@ -139,7 +157,7 @@
 		<div class="row">
 			<div class="col-lg-8 mx-auto">
 				<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-				<form name="sentMessage" id="contactForm" novalidate="novalidate">
+				<form name="sentMessage" id="contactForm" action="javascript:sendMail();" novalidate="novalidate">
 					<div class="control-group">
 						<div class="form-group floating-label-form-group controls mb-0 pb-2">
 							<label>Name</label>
@@ -209,7 +227,7 @@
 								<img class="img-fluid rounded mb-5" src="~/img/portfolio/@item.ImageUrl" alt="">
 								<video class="img-fluid rounded mb-5" controls>
 									<source src="~/img/portfolio/@item.vedioUrl" type="video/mp4">
-									
+
 									Your browser does not support the video tag.
 								</video>
 								<!-- Portfolio Modal - Text -->
@@ -226,3 +244,4 @@
 		</div>
 	</div>
 }
+
