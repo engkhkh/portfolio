@@ -67,11 +67,16 @@ namespace Web.Controllers
             {
                 if (model.File != null)
                 {
-                    string uploads = Path.Combine(_hosting.WebRootPath, @"img\portfolio");
-                    string fullPath = Path.Combine(uploads, model.File.FileName);
+                    string uploads = Path.Combine(_hosting.WebRootPath, Hosting2.WebRootPath, @"img\portfolio");
+                    string fullPath = Path.Combine(uploads,model.File.FileName, model.vFile.FileName);
                     model.File.CopyTo(new FileStream(fullPath, FileMode.Create));
-                   
-                    
+                    // vFile
+                  //  string uploadsv = Path.Combine(Hosting2.WebRootPath, @"img\portfolio");
+                   // string fullPathv = Path.Combine(uploadsv, model.vFile.FileName);
+                 //   model.vFile.CopyTo(new FileStream(fullPathv, FileMode.Create)); 
+                 
+
+
                 }
 
                 portfolioitem portfolioItem = new portfolioitem
@@ -135,7 +140,7 @@ namespace Web.Controllers
                         string uploads = Path.Combine(_hosting.WebRootPath, @"img\portfolio");
                         string fullPath = Path.Combine(uploads, model.File.FileName);
                         model.File.CopyTo(new FileStream(fullPath, FileMode.Create));
-                        //// vFile
+                        // vFile
                         //string uploadsv = Path.Combine(_hosting.WebRootPath, @"img\portfolio");
                         //string fullPathv = Path.Combine(uploadsv, model.vFile.FileName);
                         //model.vFile.CopyTo(new FileStream(fullPathv, FileMode.Create));
