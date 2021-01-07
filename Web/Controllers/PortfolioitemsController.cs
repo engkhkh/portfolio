@@ -26,7 +26,7 @@ namespace Web.Controllers
         {
             _portfolio = portfolio;
             _hosting = hosting;
-            Hosting2 = hosting2;
+            //Hosting2 = hosting2;
         }
 
         // GET: Portfolioitems
@@ -59,7 +59,10 @@ namespace Web.Controllers
         }
 
         // POST: Portfolioitems/Create
+
         [HttpPost]
+        [RequestFormLimits(MultipartBodyLengthLimit = 209715200)]
+        [RequestSizeLimit(209715200)]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(PortfolioViewModel model)
         {
@@ -67,14 +70,23 @@ namespace Web.Controllers
             {
                 if (model.File != null)
                 {
-                    string uploads = Path.Combine(_hosting.WebRootPath, Hosting2.WebRootPath, @"img\portfolio");
-                    string fullPath = Path.Combine(uploads,model.File.FileName, model.vFile.FileName);
+                    string uploads = Path.Combine(_hosting.WebRootPath, @"img\portfolio");
+                    string fullPath = Path.Combine(uploads,model.File.FileName);
                     model.File.CopyTo(new FileStream(fullPath, FileMode.Create));
                     // vFile
-                  //  string uploadsv = Path.Combine(Hosting2.WebRootPath, @"img\portfolio");
-                   // string fullPathv = Path.Combine(uploadsv, model.vFile.FileName);
-                 //   model.vFile.CopyTo(new FileStream(fullPathv, FileMode.Create)); 
-                 
+                    //string uploadsv = Path.Combine(Hosting2.WebRootPath, @"img\portfolio");
+                    // string fullPathv = Path.Combine(uploadsv, model.vFile.FileName);
+                    //  model.vFile.CopyTo(new FileStream(fullPathv, FileMode.Create)); 
+                    string uploadsv = Path.Combine(_hosting.WebRootPath, @"img\portfolio");
+                    string fileName = $"{uploadsv}\\{model.vFile.FileName}";
+               
+
+                    using (FileStream fs = System.IO.File.Create(fileName))
+                    {
+                        model.vFile.CopyTo(fs);
+                        fs.Flush();
+                    }
+                   
 
 
                 }
@@ -84,11 +96,13 @@ namespace Web.Controllers
                     ProjectName = model.ProjectName,
                     Description = model.Description,
                   ImageUrl = model.File.FileName,
-                   // vedioUrl= model.vFile.FileName
+                    vedioUrl= model.vFile.FileName
                 };
 
                 _portfolio.Entity.insert(portfolioItem);
                 _portfolio.save();
+                //ViewData["message"] = $"{model.vFile.Length} bytes uploaded successfully!";
+
                 return RedirectToAction(nameof(Index));
             }
 
@@ -114,7 +128,7 @@ namespace Web.Controllers
                 Id = portfolioItem.Id,
                 Description = portfolioItem.Description,
                 ImageUrl = portfolioItem.ImageUrl,
-                //vedioUrl= portfolioItem.vedioUrl,
+                vedioUrl= portfolioItem.vedioUrl,
                 ProjectName = portfolioItem.ProjectName
             };
 
@@ -144,6 +158,15 @@ namespace Web.Controllers
                         //string uploadsv = Path.Combine(_hosting.WebRootPath, @"img\portfolio");
                         //string fullPathv = Path.Combine(uploadsv, model.vFile.FileName);
                         //model.vFile.CopyTo(new FileStream(fullPathv, FileMode.Create));
+                        string uploadsv = Path.Combine(_hosting.WebRootPath, @"img\portfolio");
+                        string fileName = $"{uploadsv}\\{model.vFile.FileName}";
+
+
+                        using (FileStream fs = System.IO.File.Create(fileName))
+                        {
+                            model.vFile.CopyTo(fs);
+                            fs.Flush();
+                        }
                     }
 
                     portfolioitem portfolioItem = new portfolioitem
@@ -152,11 +175,11 @@ namespace Web.Controllers
                         ProjectName = model.ProjectName,
                         Description = model.Description,
                         ImageUrl = model.File.FileName,
-                       // vedioUrl=model.vFile.FileName
+                       vedioUrl=model.vFile.FileName
                     };
 
                     _portfolio.Entity.update(portfolioItem);
-                    _portfolio.GetType();
+                    _portfolio.save();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
