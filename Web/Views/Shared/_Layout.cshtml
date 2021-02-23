@@ -8,7 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ITech - Consultants</title>
+    <title>EHC</title>
+	<link rel="shortcut icon" href="~/img/log.png" type="image/png">
 
     <!-- Custom fonts for this theme -->
     <link href="~/fonts/css/all.min.css" rel="stylesheet" type="text/css">
@@ -17,32 +18,64 @@
 
     <!-- Theme CSS -->
     <link href="~/css/freelancer.css" rel="stylesheet">
+<script>
+$(document).ready(function () {
+$('.navbar div a').click(function(event){
+        //remove all pre-existing active classes
+        $('.active').removeClass('active');
 
+        //add the active class to the link we clicked
+        $(this).addClass('active');
+    });
+});
+</script>
 
 </head>
 
-<body id="page-top">
+<body id="page-top" class="">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">ITech</a>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="~/img/logo1.png" alt="EHC" width="90" height="35"></a>
             <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">services</a>
+				<li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#home"><span>Home</span></a>
+                    </li>
+					<li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about"><span>About</span></a>
+                    </li>
+					<li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio"><span>Services</span></a>
+						
+                    </li>
+					<li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#projects"><span>Projects</span></a>
+						
+						
                     </li>
 					
-					 <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Quotation</a>
+				
+				
+					
+					<li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#clients"><span>Clients</span></a>
                     </li>
-                    <li class="nav-item mx-0 mx-lg-1">
-                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+					<li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#partners"><span>Partners</span></a>
                     </li>
+					<li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact"><span>Contact</span></a>
+                    </li>
+					<li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#search"><img src="~/img/search.png" alt="Search" width="50" height="25"  ></a>
+                    </li>
+               
                    
 					
                 </ul>
@@ -156,6 +189,10 @@ Websites for government sectors and private companies design service
     <!-- Bootstrap core JavaScript -->
     <script src="~/js/jquery.min.js"></script>
     <script src="~/js/bootstrap.bundle.min.js"></script>
+	<!-- querycountup -->
+	
+		<script src="~/js/jquery.counterup.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="~/js/jquery.easing.min.js"></script>
