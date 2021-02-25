@@ -6263,8 +6263,8 @@ button.bg-primary:focus {
    
 }
 .fixed-bg1 {
-    background-image: url('../img/ABOUT US1.jpeg');
-    min-height: 900px;
+    background-image: url('../img/div3.jpg');
+    min-height: 700px;
     
     background-attachment: fixed;
     background-position: center;
@@ -6273,7 +6273,7 @@ button.bg-primary:focus {
 }
 .fixed-bg2 {
     background-image: url('../img/services.jpg');
-    min-height: 900px;
+    min-height: 870px;
 
     background-attachment: fixed;
     background-position: center;
@@ -6288,6 +6288,31 @@ button.bg-primary:focus {
     background-repeat: no-repeat;
     background-size: auto;
     background-color: darkgray;
+}
+.fixed-bg4 {
+    
+    min-height: 600px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #262626;
+}
+.fixed-bg5 {
+    min-height: 600px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: darkgrey;
+}
+.fixed-bg6 {
+    min-height: 600px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: #262626;
 }
 .card:hover {
     box-shadow: 8px 8px 5px black;
@@ -9492,7 +9517,10 @@ a.text-primary:hover, a.text-primary:focus {
 }
 
 .text-secondary {
-  color: #2c3e50 !important;
+  color: #fff !important;
+}
+.text-secondary2 {
+    color: #000 !important;
 }
 
 a.text-secondary:hover, a.text-secondary:focus {
@@ -9873,7 +9901,7 @@ a.text-dark:hover, a.text-dark:focus {
   left: 0;
   transition: all 0.2s ease-in-out;
   opacity: 0;
-  background-color: rgba(26, 188, 156, 0.9);
+ /* background-color: rgba(26, 188, 156, 0.9);*/
 }
 
 .portfolio .portfolio-item .portfolio-item-caption:hover {

@@ -63,6 +63,7 @@ namespace Web
             app.UseRouting();
 
             app.UseAuthorization();
+            //app.UseStatusCodePages();
 
             app.UseEndpoints(endpoints =>
             {
