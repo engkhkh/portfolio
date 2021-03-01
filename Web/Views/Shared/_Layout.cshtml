@@ -29,6 +29,32 @@ $('.navbar div a').click(function(event){
     });
 });
 </script>
+<style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;
+        /* The height is 400 pixels */
+        width: 100%;
+        /* The width is the width of the web page */
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Uluru
+        const uluru = { lat: 24.778088765438735, lng: 46.783964360809755 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: uluru,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+        });
+      }
+    </script>
 
 </head>
 
@@ -88,93 +114,110 @@ $('.navbar div a').click(function(event){
    </div>
 
     <!-- Footer -->
-    <footer class="footer text-center">
+    <footer class="footer text-center" id="contact">
         <div class="container">
+		<div class="f1">
             <div class="row">
 
                 <!-- Footer Location -->
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">ITECH</h4>
-                    <p class="lead mb-0">
-                       ITECH Company for computer programs and networks honor to provide services and software solutions to government sectors and enterprises, institutions and services substantive and technical support as we provide our customers with financial systems ,Point Of Sales , systems of human resourc and ERP Systems
-                        <br>
-						<a class="btn btn-outline-light btn-social mx-1" href="#">
-                        <i class="fab fa-fw fa-facebook-f"></i>
-                    </a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#">
-                        <i class="fab fa-fw fa-twitter"></i>
-                    </a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#">
-                        <i class="fab fa-fw fa-linkedin-in"></i>
-                    </a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#">
-                        <i class="fab fa-fw fa-dribbble"></i>
-                    </a>
-						
-                    </p>
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                     <h3></h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUo2RP2RSwHxQsNwv-TRyUz7TQVPHaX4Q&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+<br/>
+<img src="~/img/foo1.png" alt="EHC" class="img-fluid img-thumbnail">
+
                 </div>
 
                 <!-- Footer Social Icons -->
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Our Services</h4>
-					<a  href="#"> Software Program
-                    </a>
-                    <br>
-
-We provides programming services that help you to build applications and sites keep pace with your successes!
-<br>
-<a  href="#">Maintenance and network surveillance cameras
-                    </a>
-                    <br>
-
-
-We provide technical support for computer hardware and networking services through contracts
-<br>
-<a  href="#">Web Design
-                    </a>
-                    <br>
-
-
-Websites for government sectors and private companies design service
-<br>
-                </div>
+               
 
                 <!-- Footer About Text -->
-                <div class="col-lg-4">
-                    <h4 class="text-uppercase mb-4">Contact Us</h4>
+                <div class="col-lg-6 ">
+                    <h4 class="text-uppercase mb-4"></h4>
                     
-					<table class="news" cellspacing="15" cellpadding="4">
-				<tbody>
-					<tr>
-						<td style="width:50px;"><img class="img-responsive center-block"  src="img/location_icon_footer.png"></td>
-						<td>Saudi Arabia, Riyadh, King Abdullah Road in exchange Hamra Mall </td>
-					</tr>
-					<tr>
-						<td height="20"></td>
-					</tr>
-					<tr>
-						<td style="width:28px;"><img class="img-responsive center-block"  src="img/phone_icon_foote.png"></td>
-						<td class="footer">(+966)560471082/580857745</td>
-					</tr>
-					<tr>
-						<td height="20"></td>
-					</tr>
-					<tr>
-						<td style="width:28px;"><img class="img-responsive center-block"  src="img/email_icon_footer.png"></td>
-						<td><a class="footer" href="mailto:info@itechksa.com">info@itech.com</a></td>
-					</tr>
-				</tbody>
-			</table>
+					<div class="container wh">
+
+            <!-- Contact Section Heading -->
+           
+
+            <!-- Icon Divider -->
+          
+
+            <!-- Contact Section Form -->
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+                    <form name="sentMessage" id="contactForm" action="javascript:sendMail();" novalidate="novalidate">
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <label>Name</label>
+                                <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your yourcompany name.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <label>Email Address</label>
+                                <input class="form-control" id="email" type="email" placeholder="Email " required="required" data-validation-required-message="Please enter your email address.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <label>Phone Number</label>
+                                <input class="form-control" id="phone" type="tel" placeholder="Mobile" required="required" data-validation-required-message="Please enter your phone number.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                <label>Message</label>
+                                <input class="form-control" id="message" rows="5" placeholder="Subject" required="required" data-validation-required-message="Please enter a message.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div><br>
+						 <div class="control-group">
+                            <div class="form-group floating-label-form-group controls mb-0 pb-5 btn-primary11">
+                               
+                            </div>
+                        </div>
+						
+                        <br><br>
+                        <div id="success"></div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary11 btn-xl" id="sendMessageButton">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
                 </div>
 
             </div>
+			</div>
+			<br><br>
+			<p class="text-left">Quick Links</p>
+			<br>
+			<p class="text-left"> &ensp;>>> &ensp;<a class="" href="#home">Home</a> &ensp;>>>&ensp; <a class="" href="#about">About</a> &ensp;>>>&ensp; <a class="" href="#portfolio">Services</a>&ensp; >>>&ensp; <a class="" href="#projects">Projects</a>&ensp; >>>&ensp; <a class="" href="#clients">Clients</a> &ensp;>>> &ensp; <a class="" href="#partners">Partners</a> &ensp;>>>&ensp; <a class="" href="#contact">Contact</a> &ensp;>>> &ensp; <a class="" href="#careers">Careers</a> &ensp;>>>&ensp; </p>
+			<br><br>
+			<p class="text-center">For More Information</p>
+			<br>
+				<p class="text-center"><a class="" href="~/img/EngHouse.pdf" download><img src="~/img/button.png" alt="EHC Profile" class="" width="150" height="35" ></a></p>
         </div>
     </footer>
 
     <!-- Copyright Section -->
     <section class="copyright py-4 text-center text-white">
         <div class="container">
-            <small>Copyright &copy; 2020-2021</small>
+            <small>Copyright &copy; ENGHOUS.COM 2021-2014. All rights reserved.</small>
         </div>
     </section>
 
