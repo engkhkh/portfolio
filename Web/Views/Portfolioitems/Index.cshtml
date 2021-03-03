@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Core.Entities.portfolioitem>
 
 <div style="padding:120px;">
-    <h1>Index</h1>
+    <h1></h1>
     <p>
         <a asp-action="Create" class="btn btn-primary">Create New </a>
     </p>
@@ -16,37 +16,91 @@
                     @Html.DisplayNameFor(Model => Model.Description)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(Model => Model.ImageUrl)
+                    Image 1
                 </th>
                 <th>
-                    @Html.DisplayNameFor(Model => Model.vedioUrl)
+                    Image 2
+                </th>
+                <th>
+                    Image 3
+                </th>
+                <th>
+                    Image 4
+                </th>
+                <th>
+                    Image 5
+                </th>
+                <th>
+                    Image 6
+                </th>
+                <th>
+                    Image 7
+                </th>
+                <th>
+                    Image 8
+                </th>
+                <th>
+                    Image 9
+                </th>
+                <th>
+                    Image 10
+                </th>
+                <th>
+                    Image 11
                 </th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ProjectName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Description)
-                    </td>
-                    <td>
-                        <img src="~/img/portfolio/@item.ImageUrl" class="img-thumbnail" />
-                    </td>
-                    <td>
-                        <video src="~/img/portfolio/@item.vedioUrl" class="img-thumbnail" ></video>
-                    </td>
-                    <td>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    <img src="~/img/portfolio/@item.ImageUrl" class="img-thumbnail" />
+                </td>
+                <td>
+                    <img src="~/img/portfolio/@item.vedioUrl" class="img-thumbnail" />
+                </td>
+                <td>
+                    <img src="~/img/portfolio/@item.Image2" class="img-thumbnail" />
+                </td>
+                <td>
+                    <img src="~/img/portfolio/@item.Image3" class="img-thumbnail" />
+                </td>
+                <td>
+                    <img src="~/img/portfolio/@item.Image4" class="img-thumbnail" />
+                </td>
+                <td>
+                    <img src="~/img/portfolio/@item.Image5" class="img-thumbnail" />
+                </td>
+                <td>
+                    <img src="~/img/portfolio/@item.Image6" class="img-thumbnail" />
+                </td>
+                <td>
+                    <img src="~/img/portfolio/@item.Image7" class="img-thumbnail" />
+                </td>
+                <td>
+                    <img src="~/img/portfolio/@item.Image8" class="img-thumbnail" />
+                </td>
+                <td>
+                    <img src="~/img/portfolio/@item.Image9" class="img-thumbnail" />
+                </td>
+                <td>
+                    <img src="~/img/portfolio/@item.Image10" class="img-thumbnail" />
+                </td>
+                <td>
 
-                        <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a>|
-                        <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-eye"></i></a>|
-                        <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash"></i></a>|
+                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a>|
+                    <a asp-action="Details" asp-route-id="@item.Id"><i class="fas fa-eye"></i></a>|
+                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="fas fa-trash"></i></a>|
 
-                    </td>
-                </tr>
+                </td>
+            </tr>
             }
         </tbody>
     </table>
