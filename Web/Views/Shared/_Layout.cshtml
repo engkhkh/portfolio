@@ -18,6 +18,7 @@
 
     <!-- Theme CSS -->
     <link href="~/css/freelancer.css" rel="stylesheet">
+	<script src="~/js/JavaScript.js"></script>
 <script>
 $(document).ready(function () {
 $('.navbar div a').click(function(event){
@@ -95,6 +96,7 @@ $('.navbar div a').click(function(event){
 					<li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#partners"><span>Partners</span></a>
                     </li>
+					
 					<li class="nav-item mx-0 mx-lg-1">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact"><span>Contact</span></a>
                     </li>
@@ -154,32 +156,32 @@ $('.navbar div a').click(function(event){
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                    <form name="sentMessage" id="contactForm" action="javascript:sendMail();" novalidate="novalidate">
+                    <form name="sentMessage" id="contactForm" action="javascript:sendMail1();" novalidate="novalidate" method="post">
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                 <label>Name</label>
-                                <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your yourcompany name.">
+                                <input class="form-control" id="name1" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your yourcompany name.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                 <label>Email Address</label>
-                                <input class="form-control" id="email" type="email" placeholder="Email " required="required" data-validation-required-message="Please enter your email address.">
+                                <input class="form-control" id="email1" type="email" placeholder="Email " required="required" data-validation-required-message="Please enter your email address.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                 <label>Phone Number</label>
-                                <input class="form-control" id="phone" type="tel" placeholder="Mobile" required="required" data-validation-required-message="Please enter your phone number.">
+                                <input class="form-control" id="phone1" type="tel" placeholder="Mobile" required="required" data-validation-required-message="Please enter your phone number.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="control-group">
                             <div class="form-group floating-label-form-group controls mb-0 pb-2">
                                 <label>Message</label>
-                                <input class="form-control" id="message" rows="5" placeholder="Subject" required="required" data-validation-required-message="Please enter a message.">
+                                <input class="form-control" id="message1" rows="5" placeholder="Subject" required="required" data-validation-required-message="Please enter a message.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div><br>

@@ -14,5 +14,6 @@ namespace Web.ViewModels
         public Owner Owner { get; set; }
 
         public List<portfolioitem> Portfolioitems { get; set; }
+        public List<Career> Careers { get; set; }
     }
 }

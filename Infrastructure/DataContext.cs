@@ -17,6 +17,7 @@ namespace Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+          //  modelBuilder.Entity<Career>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
             modelBuilder.Entity<Owner>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
             modelBuilder.Entity<portfolioitem>().Property(x => x.Id).HasDefaultValueSql("NEWID()");
             modelBuilder.Entity<Owner>().HasData(
@@ -32,6 +33,7 @@ namespace Infrastructure
         }
         public DbSet<Owner> Owner { get; set; }
         public DbSet<portfolioitem> portfolioitems { get; set; }
+        public DbSet<Career> careers { get; set; }
 
         /*
          dotnet ef database update -s C:\Users\Administrator\Source\Repos\portfolio\Web\Web.csproj

@@ -14,6 +14,7 @@ namespace Web.Controllers
         public IunitOfWork<Owner> Owner { get; }
         public IunitOfWork<portfolioitem>_PORTFOLIO { get; }
 
+
         public HomeController(IunitOfWork<Owner> owner,IunitOfWork<portfolioitem> PORTFOLIO)
         {
             Owner = owner;
@@ -30,6 +31,10 @@ namespace Web.Controllers
             return View(HomeViewModel);
         }
         public IActionResult About()
+        {
+            return View();
+        }
+        public IActionResult Career()
         {
             return View();
         }

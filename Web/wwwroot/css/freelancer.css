@@ -6324,6 +6324,14 @@ button.bg-primary:focus {
     background-size: auto;
     background-color: #343a40;
 }
+.fixed-bg7 {
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: ghostwhite;
+}
 
 
 .f1 {
